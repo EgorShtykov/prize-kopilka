@@ -1,4 +1,12 @@
-export type GiftCategory = 'Канцелярия' | 'Книги' | 'Творчество' | 'Игры' | 'Хобби' | 'Сертификаты'
+export type GiftCategory =
+  'Гаджеты' | 'Для комнаты' | 'Стиль' | 'Творчество' | 'Игры' | 'Книги' | 'Сертификаты'
+
+export type GiftArtKind =
+  'stationery' | 'bookmark' | 'keychain' | 'pens' | 'book' |
+  'puzzle' | 'sketchbook' | 'game' | 'tape' | 'art' |
+  'certificate' | 'science' | 'merch' | 'craft' |
+  'construction' | 'calligraphy' | 'speaker' | 'headphones' |
+  'printer' | 'light' | 'power' | 'photo' | 'bag'
 
 export type Gift = {
   id: number
@@ -6,46 +14,49 @@ export type Gift = {
   category: GiftCategory
   price: number
   description: string
-  art: 'stationery' | 'bookmark' | 'keychain' | 'pens' | 'book' | 'puzzle' | 'sketchbook' | 'game' | 'tape' | 'art' | 'certificate' | 'science' | 'merch' | 'craft' | 'construction' | 'calligraphy'
+  art: GiftArtKind
   tone: 'yellow' | 'green' | 'sage' | 'coral'
 }
 
 export const gifts: Gift[] = [
-  { id: 1, title: 'Набор стикеров', category: 'Канцелярия', price: 250, description: 'Стикеры с любимыми героями, животными или мотивирующими фразами.', art: 'stationery', tone: 'yellow' },
-  { id: 2, title: 'Необычная закладка', category: 'Канцелярия', price: 250, description: 'Металлическая, магнитная или объёмная закладка по интересам ученика.', art: 'bookmark', tone: 'sage' },
-  { id: 3, title: 'Брелок по интересам', category: 'Хобби', price: 250, description: 'Небольшой персональный приз: любимая игра, животное, спорт или персонаж.', art: 'keychain', tone: 'coral' },
-  { id: 4, title: 'Гелевые ручки', category: 'Канцелярия', price: 500, description: 'Несколько цветных или пастельных ручек для конспектов и рисования.', art: 'pens', tone: 'green' },
-  { id: 5, title: 'Комикс или манга', category: 'Книги', price: 500, description: 'Небольшое издание или первый том истории, которую хочется продолжить.', art: 'book', tone: 'yellow' },
-  { id: 6, title: 'Мини-головоломка', category: 'Игры', price: 500, description: 'Механическая головоломка, лабиринт или набор логических задач.', art: 'puzzle', tone: 'sage' },
-  { id: 7, title: 'Скетчбук', category: 'Творчество', price: 750, description: 'Плотные страницы и обложка, которую можно выбрать под вкус ученика.', art: 'sketchbook', tone: 'coral' },
-  { id: 8, title: 'Карточная игра', category: 'Игры', price: 750, description: 'Компактная игра для друзей и семьи — от стратегии до весёлых ассоциаций.', art: 'game', tone: 'green' },
-  { id: 9, title: 'Декоративные ленты', category: 'Творчество', price: 750, description: 'Набор для скрапбукинга, украшения тетрадей и творческих проектов.', art: 'tape', tone: 'yellow' },
-  { id: 10, title: 'Книга по интересам', category: 'Книги', price: 1000, description: 'Роман, энциклопедия, научпоп или иллюстрированное издание по увлечению.', art: 'book', tone: 'sage' },
-  { id: 11, title: 'Набор для рисования', category: 'Творчество', price: 1000, description: 'Маркеры, карандаши или краски с бумагой — готовый повод создать что-то новое.', art: 'art', tone: 'coral' },
-  { id: 12, title: 'Сертификат в книжный', category: 'Сертификаты', price: 1000, description: 'Ученик сам выбирает книгу, комикс или канцелярию на сумму сертификата.', art: 'certificate', tone: 'green' },
-  { id: 13, title: 'Алмазная мозаика', category: 'Творчество', price: 1250, description: 'Спокойное творческое занятие с готовой картиной в качестве результата.', art: 'craft', tone: 'yellow' },
-  { id: 14, title: 'Тематический мерч', category: 'Хобби', price: 1250, description: 'Футболка, кружка или аксессуар с любимой вселенной, командой или героем.', art: 'merch', tone: 'sage' },
-  { id: 15, title: 'Набор для опытов', category: 'Хобби', price: 1250, description: 'Безопасные домашние эксперименты по химии, физике или биологии.', art: 'science', tone: 'coral' },
-  { id: 16, title: 'Настольная игра', category: 'Игры', price: 1500, description: 'Полноценная игра для семьи или компании — приз, которым можно делиться.', art: 'game', tone: 'green' },
-  { id: 17, title: 'Набор для лепки', category: 'Творчество', price: 1500, description: 'Полимерная глина или масса для лепки с инструментами и материалами.', art: 'craft', tone: 'yellow' },
-  { id: 18, title: 'Сертификат на мастер-класс', category: 'Сертификаты', price: 1500, description: 'Новый опыт по интересам: рисование, керамика, кулинария или другое занятие.', art: 'certificate', tone: 'sage' },
-  { id: 19, title: 'Большой набор для опытов', category: 'Хобби', price: 1750, description: 'Расширенный набор для серии экспериментов и самостоятельных открытий.', art: 'science', tone: 'coral' },
-  { id: 20, title: 'Конструктор', category: 'Игры', price: 1750, description: 'Модель техники, здания или механизма для увлекательной сборки.', art: 'construction', tone: 'green' },
-  { id: 21, title: 'Набор для каллиграфии', category: 'Творчество', price: 1750, description: 'Перья, держатели, чернила и бумага для красивого письма и надписей.', art: 'calligraphy', tone: 'yellow' },
-  { id: 22, title: 'Книжная серия', category: 'Книги', price: 2000, description: 'Несколько томов любимой истории или красивое подарочное издание.', art: 'book', tone: 'sage' },
-  { id: 23, title: 'Большой творческий набор', category: 'Творчество', price: 2000, description: 'Солидный набор материалов для живописи, рукоделия или другого хобби.', art: 'art', tone: 'coral' },
-  { id: 24, title: 'Подарок на выбор', category: 'Сертификаты', price: 2000, description: 'Сертификат или заранее согласованный подарок, который ученик выберет сам.', art: 'certificate', tone: 'green' },
+  { id: 1, title: 'Стикерпак по своему дизайну', category: 'Творчество', price: 250, description: 'Небольшой набор наклеек с любимыми персонажами, мемами или собственным рисунком ученика.', art: 'stationery', tone: 'yellow' },
+  { id: 2, title: 'Чарм на рюкзак', category: 'Стиль', price: 250, description: 'Брелок, фигурка или подвеска по интересам — заметный способ сделать рюкзак своим.', art: 'keychain', tone: 'coral' },
+  { id: 3, title: 'Мини-головоломка', category: 'Игры', price: 250, description: 'Металлический пазл, лабиринт или магнитный антистресс для коротких перерывов.', art: 'puzzle', tone: 'sage' },
+  { id: 4, title: 'Цепочка для телефона', category: 'Стиль', price: 500, description: 'Яркий аксессуар с бусинами, буквами имени или подвесками по выбору ученика.', art: 'keychain', tone: 'green' },
+  { id: 5, title: 'Фотопечать для комнаты', category: 'Для комнаты', price: 500, description: 'Серия снимков с друзьями, питомцами или из путешествий — для стены, доски или альбома.', art: 'photo', tone: 'yellow' },
+  { id: 6, title: 'Компактная карточная игра', category: 'Игры', price: 500, description: 'Быстрая игра на реакцию, ассоциации или логику, которую удобно взять с собой.', art: 'game', tone: 'sage' },
+  { id: 7, title: 'Проектор заката', category: 'Для комнаты', price: 750, description: 'Небольшая лампа для атмосферных фото, музыки и вечернего отдыха.', art: 'light', tone: 'coral' },
+  { id: 8, title: 'Маркеры для скетчинга', category: 'Творчество', price: 750, description: 'Набор базовых или необычных оттенков для рисунков, lettering и оформления конспектов.', art: 'pens', tone: 'green' },
+  { id: 9, title: 'Сквиш или антистресс-куб', category: 'Игры', price: 750, description: 'Тактильная игрушка по вкусу ученика — мягкая, магнитная или трансформирующаяся.', art: 'puzzle', tone: 'yellow' },
+  { id: 10, title: 'LED-подсветка комнаты', category: 'Для комнаты', price: 1000, description: 'Светодиодная лента или компактная подсветка рабочего стола с разными режимами.', art: 'light', tone: 'sage' },
+  { id: 11, title: 'Кружка с личным дизайном', category: 'Стиль', price: 1000, description: 'Имя, любимая цитата, игра или собственная иллюстрация — без случайного принта.', art: 'merch', tone: 'coral' },
+  { id: 12, title: 'Сертификат на маркетплейс', category: 'Сертификаты', price: 1000, description: 'Свобода выбрать мерч, книгу или аксессуар вместе с родителями в пределах суммы.', art: 'certificate', tone: 'green' },
+  { id: 13, title: 'Конструктор-миниатюра', category: 'Игры', price: 1250, description: 'Техника, робот или архитектура: интересная сборка и готовый объект для полки.', art: 'construction', tone: 'yellow' },
+  { id: 14, title: 'Поясная сумка', category: 'Стиль', price: 1250, description: 'Компактная сумка для телефона, наушников и мелочей — цвет и модель выбирает ученик.', art: 'bag', tone: 'sage' },
+  { id: 15, title: 'Манга или комикс', category: 'Книги', price: 1250, description: 'Первый том новой истории или продолжение серии, которую ученик действительно хочет читать.', art: 'book', tone: 'coral' },
+  { id: 16, title: 'Портативная Bluetooth-колонка', category: 'Гаджеты', price: 1500, description: 'Компактная колонка для музыки и встреч с друзьями; модель согласуем перед покупкой.', art: 'speaker', tone: 'green' },
+  { id: 17, title: 'Набор для полимерной лепки', category: 'Творчество', price: 1500, description: 'Глина, инструменты и фурнитура для фигурок, брелоков или украшений своего дизайна.', art: 'craft', tone: 'yellow' },
+  { id: 18, title: 'Сертификат по интересам', category: 'Сертификаты', price: 1500, description: 'Книжный, спортивный или магазин мерча — направление выбирается заранее.', art: 'certificate', tone: 'sage' },
+  { id: 19, title: 'Внешний аккумулятор', category: 'Гаджеты', price: 1750, description: 'Практичный power bank для прогулок и поездок, с подходящим разъёмом и ёмкостью.', art: 'power', tone: 'coral' },
+  { id: 20, title: 'Настольная игра для компании', category: 'Игры', price: 1750, description: 'Полноценная игра для семьи или друзей: стратегия, детектив или весёлые ассоциации.', art: 'game', tone: 'green' },
+  { id: 21, title: 'Футболка с личным принтом', category: 'Стиль', price: 1750, description: 'Кастомная вещь с дизайном ученика или понятной ему темой — размер и макет согласуются.', art: 'merch', tone: 'yellow' },
+  { id: 22, title: 'Проектор звёздного неба', category: 'Для комнаты', price: 2000, description: 'Умная лампа или проектор с мягкими сценами света для личного пространства.', art: 'light', tone: 'sage' },
+  { id: 23, title: '3D-ручка с пластиком', category: 'Творчество', price: 2000, description: 'Набор для объёмных фигурок и моделей; цвета пластика можно выбрать отдельно.', art: 'science', tone: 'coral' },
+  { id: 24, title: 'Сертификат на мастер-класс', category: 'Сертификаты', price: 2000, description: 'Новый опыт по интересам: керамика, рисование, кулинария или другое согласованное занятие.', art: 'certificate', tone: 'green' },
+  { id: 25, title: 'Беспроводные наушники', category: 'Гаджеты', price: 2500, description: 'TWS-модель для музыки, прогулок и звонков; перед покупкой проверяем совместимость.', art: 'headphones', tone: 'yellow' },
+  { id: 26, title: 'Мини-принтер для телефона', category: 'Гаджеты', price: 2500, description: 'Печать маленьких фото, стикеров и заметок без чернил — плюс стартовый запас бумаги.', art: 'printer', tone: 'sage' },
+  { id: 27, title: 'Большой сертификат на выбор', category: 'Сертификаты', price: 2500, description: 'Для тех, кто хочет сам найти идеальный приз: магазин и правила выбора согласуются заранее.', art: 'certificate', tone: 'coral' },
+  { id: 28, title: 'Колонка с хорошим звуком', category: 'Гаджеты', price: 3000, description: 'Более мощная портативная колонка — главная цель цикла для любителя музыки.', art: 'speaker', tone: 'green' },
+  { id: 29, title: 'Худи с собственным дизайном', category: 'Стиль', price: 3000, description: 'Персональный мерч: ученик выбирает цвет, макет и надпись вместе с репетитором и родителями.', art: 'merch', tone: 'yellow' },
+  { id: 30, title: 'Главный приз на выбор', category: 'Сертификаты', price: 3000, description: 'Максимум за идеальный цикл: заранее согласованная вещь или сертификат на всю сумму.', art: 'certificate', tone: 'coral' },
 ]
 
-export const categories = ['Все', 'Канцелярия', 'Книги', 'Творчество', 'Игры', 'Хобби', 'Сертификаты'] as const
+export const categories = ['Все', 'Гаджеты', 'Для комнаты', 'Стиль', 'Творчество', 'Игры', 'Книги', 'Сертификаты'] as const
 
 export function savingPlan(price: number) {
-  if (price <= 1000) {
-    const weeks = price / 250
-    if (weeks === 1) return '1 отложенная неделя'
-    if (weeks === 4) return '4 недели или бонус месяца'
-    return `${weeks} отложенные недели`
-  }
-  const weeks = (price - 1000) / 250
-  return `бонус месяца + ${weeks} ${weeks === 1 ? 'неделя' : 'недели'}`
+  if (price > 2000) return '8 домашек + бонус цикла'
+  const homework = price / 250
+  if (homework === 1) return '1 выполненная домашка'
+  if (homework < 5) return `${homework} выполненные домашки`
+  return `${homework} выполненных домашек`
 }

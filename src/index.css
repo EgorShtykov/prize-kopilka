@@ -5,21 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --paper-primitive: oklch(0.963 0.008 95);
-  --gray-primitive: oklch(0.945 0.003 95);
-  --ink-primitive: oklch(0.235 0.008 90);
-  --yellow-primitive: oklch(0.879 0.172 96);
-  --green-primitive: oklch(0.546 0.143 153);
-  --green-dark-primitive: oklch(0.445 0.113 153);
-  --sage-primitive: oklch(0.748 0.025 133);
-  --coral-primitive: oklch(0.684 0.111 35);
+  --paper-primitive: #F7EDE2;
+  --gray-primitive: #F6F6F6;
+  --ink-primitive: #272525;
+  --yellow-primitive: #FFCE80;
+  --green-primitive: #00D9A3;
+  --green-dark-primitive: #008A67;
+  --sage-primitive: #84A59D;
+  --coral-primitive: #F28482;
+  --coral-light-primitive: #F5CAC3;
   --background: var(--paper-primitive);
   --foreground: var(--ink-primitive);
   --surface: var(--gray-primitive);
   --accent: var(--yellow-primitive);
   --accent-green: var(--green-primitive);
-  --muted: oklch(0.43 0.012 90);
-  --line: oklch(0.81 0.013 95);
+  --muted: #525355;
+  --line: #D8CFC6;
   --font-body: 'Manrope', sans-serif;
   --font-display: 'Lora', serif;
 }
