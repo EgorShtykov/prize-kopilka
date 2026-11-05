@@ -2,12 +2,12 @@ import type { Gift } from '../data/gifts'
 
 type Props = Pick<Gift, 'art' | 'tone' | 'title'>
 
-const ink = '#1e1e1e'
-const paper = '#f5f5f0'
-const yellow = '#f6dd38'
-const green = '#009147'
-const sage = '#b2b5a8'
-const coral = '#d7846f'
+const ink = '#272525'
+const paper = '#F7EDE2'
+const yellow = '#FFCE80'
+const green = '#00D9A3'
+const sage = '#84A59D'
+const coral = '#F28482'
 
 export default function GiftArt({ art, tone, title }: Props) {
   const accent = tone === 'yellow' ? yellow : tone === 'green' ? green : tone === 'coral' ? coral : sage
@@ -145,6 +145,62 @@ export default function GiftArt({ art, tone, title }: Props) {
           <path d="m152 139 36-101 19 7-36 101-17 12z" fill={accent} {...common} />
           <path d="m188 38 7-17 12 24z" fill={yellow} {...common} />
           <path d="m173 119 19 7" fill="none" {...common} />
+        </>
+      case 'speaker':
+        return <>
+          <rect x="72" y="30" width="116" height="120" rx="26" fill={accent} {...common} />
+          <circle cx="130" cy="100" r="32" fill={paper} {...common} />
+          <circle cx="130" cy="100" r="15" fill={yellow} {...common} />
+          <circle cx="130" cy="51" r="8" fill={paper} {...common} />
+          <path d="M101 143h58M52 71c-12 18-12 39 0 57M208 71c12 18 12 39 0 57" fill="none" {...common} />
+        </>
+      case 'headphones':
+        return <>
+          <path d="M69 99V82c0-37 25-57 61-57s61 20 61 57v17" fill="none" {...common} strokeWidth="12" />
+          <path d="M69 93c-15 0-23 11-23 26s8 26 23 26h21V93zM191 93c15 0 23 11 23 26s-8 26-23 26h-21V93z" fill={accent} {...common} />
+          <path d="M89 107v24M171 107v24" fill="none" {...common} />
+          <path d="m130 54 6 12 14 2-10 9 2 14-12-7-12 7 2-14-10-9 14-2z" fill={yellow} {...common} />
+        </>
+      case 'printer':
+        return <>
+          <path d="M85 25h90v69H85z" fill={paper} {...common} />
+          <path d="M101 40h58M101 53h38" fill="none" {...common} />
+          <path d="M60 76h140v64H60z" fill={accent} {...common} />
+          <path d="M80 103h100v53H80z" fill={paper} {...common} />
+          <circle cx="176" cy="91" r="5" fill={yellow} {...common} />
+          <path d="m97 140 20-20 16 15 14-12 17 17" fill={sage} {...common} />
+          <circle cx="106" cy="115" r="6" fill={yellow} {...common} />
+        </>
+      case 'light':
+        return <>
+          <path d="M91 112h78l18 34H73z" fill={accent} {...common} />
+          <path d="M105 112V89h50v23" fill={paper} {...common} />
+          <path d="M64 69c18-38 114-38 132 0-31 23-101 23-132 0Z" fill={yellow} {...common} />
+          <path d="M83 69c23-14 71-14 94 0" fill="none" {...common} />
+          <path d="M45 37v20M35 47h20M207 27v20M197 37h20M190 89l12 12M58 89l-12 12" fill="none" {...common} />
+        </>
+      case 'power':
+        return <>
+          <rect x="76" y="26" width="108" height="128" rx="18" fill={accent} {...common} />
+          <path d="M101 26v-9h58v9M102 48h24" fill="none" {...common} />
+          <path d="m139 63-27 42h20l-8 32 29-46h-20z" fill={yellow} {...common} />
+          <path d="M184 113c25 0 27 9 27 23s-9 16-25 16h-18" fill="none" {...common} />
+        </>
+      case 'photo':
+        return <>
+          <path d="M61 50h105v94H61z" fill={paper} {...common} transform="rotate(-8 113 97)" />
+          <path d="M91 30h108v99H91z" fill={paper} {...common} transform="rotate(7 145 80)" />
+          <path d="M103 52h84v60h-84z" fill={accent} {...common} />
+          <path d="m106 105 24-26 18 18 15-13 21 21" fill={sage} {...common} />
+          <circle cx="122" cy="67" r="8" fill={yellow} {...common} />
+          <path d="M115 121h60" fill="none" {...common} />
+        </>
+      case 'bag':
+        return <>
+          <path d="M77 73c-35-31-47-8-37 18 7 18 21 18 40 4M183 73c35-31 47-8 37 18-7 18-21 18-40 4" fill="none" {...common} strokeWidth="9" />
+          <path d="M69 66c19-22 103-22 122 0l-9 71H78z" fill={accent} {...common} />
+          <path d="M77 88h106M113 88v30h35V88" fill={paper} {...common} />
+          <circle cx="130" cy="104" r="5" fill={yellow} {...common} />
         </>
     }
   })()
